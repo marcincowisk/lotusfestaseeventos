@@ -12,6 +12,7 @@ const SERVICES: InterestService[] = [
   "Som",
   "Iluminação",
   "Energia",
+  "Audiovisual (painel de LED / projeção)",
   "Experiências / Efeitos especiais",
   "Não sei ainda",
 ];

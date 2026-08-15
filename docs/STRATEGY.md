@@ -1,5 +1,14 @@
 # Estratégia — Redesenho Lótus Festas e Eventos
 
+## 0. Atualização de conteúdo (rodada 2)
+
+A auditoria inicial (seção 1) usou raspagem automática de texto do site atual, que não capturou o carrossel de slides da home nem sub-seções renderizadas via imagem. O cliente enviou prints desses slides depois, revelando dados reais adicionais que foram incorporados:
+
+- **WhatsApp/telefone**: `12 3883 4446` (aparece com ícone do WhatsApp na sinalização "Atendimento: segunda a sexta, das 9h às 17h"). Usado como fallback em `data/site.ts` — **confirmar com o cliente** se está habilitado como WhatsApp Business antes de divulgar amplamente.
+- **3 categorias de solução que faltavam**: Shows (produção de banda/DJ ao vivo, com lista real de artistas atendidos), Audiovisual (Painel de LED P3 4K + projeção Epson Laser até 200"), Pista de dança iluminada em LED — a categoria "Shows" foi absorvida por "Som", a pista por "Estruturas", e "Audiovisual" virou uma 6ª categoria própria.
+- **Especificações reais de gerador**: HIMOINSA trifásico, 65kVA–160kVA, modos Stand By e Full Time (10h/12h).
+- **Prova social real**: lista de artistas/bandas já atendidos (Maneva, Nando Reis, Marcelo Falcão, Planta e Raiz, Bruninho e David, Turma do Pagode, Di Propósito, Amado Batista, Latino, Henrique e Diego) — publicada na página da solução "Som".
+
 ## 1. Auditoria do site atual
 
 Site analisado diretamente em produção: `lotusfestaseeventos.com.br` — SPA de página única, navegação por âncora (`#inicio`, `#sobre`, `#solucoes`, `#equipamentos`, `#contato`).
@@ -26,17 +35,18 @@ Site analisado diretamente em produção: `lotusfestaseeventos.com.br` — SPA d
 
 **Mantido:** essência da história (2011, Caraguatatuba, casamentos na praia), catálogo técnico completo, lista real de equipamentos.
 **Removido:** Missão/Visão/Valores como abertura institucional, lista numerada de "vantagens", formulário GET simplista.
-**Reorganizado:** equipamentos → catálogo técnico em página própria; serviços → 5 categorias (Estruturas, Som, Iluminação, Energia, Experiências) na home.
+**Reorganizado:** equipamentos → catálogo técnico em página própria; serviços → 6 categorias (Estruturas, Som, Iluminação, Energia, Audiovisual, Experiências) na home — ver seção 0 sobre a categoria Audiovisual, adicionada numa segunda rodada de conteúdo.
 
 ## 2. Sitemap
 
 ```
 /                          Home
-/solucoes                  Visão geral das 5 categorias
+/solucoes                  Visão geral das 6 categorias
 /solucoes/estruturas
 /solucoes/som
 /solucoes/iluminacao
 /solucoes/energia
+/solucoes/audiovisual
 /solucoes/efeitos
 /eventos                   Portfólio editorial
 /eventos/[slug]             Case individual
@@ -54,7 +64,7 @@ Jornada principal: **Home → Soluções ou Eventos (prova) → Contato/WhatsApp
 1. Header transparente → sólido com blur no scroll
 2. Hero fullscreen (vídeo/placeholder editorial), headline + 2 CTAs, indicador de scroll
 3. Prova de experiência ("Desde 2011...", sem números inventados)
-4. Soluções — 5 categorias em showcase editorial (não grid genérico)
+4. Soluções — 6 categorias em showcase editorial (não grid genérico)
 5. Seção editorial de impacto (frase de posicionamento fullbleed)
 6. Eventos — grid assimétrico estilo magazine (estado vazio elegante até haver cases reais)
 7. Antes/Depois — só renderiza quando houver material real (`data/before-after.ts`)

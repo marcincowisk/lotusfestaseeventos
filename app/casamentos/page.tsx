@@ -45,6 +45,25 @@ export default function CasamentosPage() {
         </Container>
       </section>
 
+      <section className="border-t border-border/20 py-24 sm:py-32">
+        <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <span className="text-label uppercase tracking-[0.2em] text-primary">A cerimônia</span>
+            <h2 className="mt-4 text-h2 text-balance text-text">
+              A cerimônia é o momento mais emocionante do casal.
+            </h2>
+            <p className="mt-5 text-body-lg text-muted">
+              Transmitir essa emoção pela voz faz parte do nosso trabalho. Microfonia sem fio para os votos e o
+              celebrante, sonorização dimensionada para o vento e o som do mar — para que cada palavra chegue clara
+              a todos os convidados.
+            </p>
+          </Reveal>
+          <Reveal delay={100}>
+            <ImagePlaceholder label="Microfone sem fio — cerimônia" ratio="landscape" />
+          </Reveal>
+        </Container>
+      </section>
+
       <section className="py-24 sm:py-32">
         <Container>
           <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

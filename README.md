@@ -23,11 +23,11 @@ Se algo não compilar, é o próximo passo a corrigir — avise para eu ajustar.
 
 ## O que está marcado como `TODO` (de propósito — nada foi inventado)
 
-O site atual (`lotusfestaseeventos.com.br`) não publica telefone, WhatsApp, e-mail ou depoimentos, e não há portfólio de eventos reais disponível. Seguindo a regra de nunca inventar informação, este projeto fica **intencionalmente incompleto** nestes pontos até receber os dados oficiais:
+O site atual (`lotusfestaseeventos.com.br`) não publica telefone, e-mail ou depoimentos em texto pesquisável, e não há portfólio de eventos reais disponível. Seguindo a regra de nunca inventar informação, este projeto fica **intencionalmente incompleto** nestes pontos até receber os dados oficiais:
 
 | Onde | O que falta | Como preencher |
 |---|---|---|
-| `.env.local` | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número oficial em formato internacional (ex: `5512999999999`). Sem ele, o botão de WhatsApp simplesmente não aparece no site. |
+| `data/site.ts` | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Já tem um fallback real (`551238834446`, achado na sinalização do site atual) — **confirme com o cliente** se é o número certo/habilitado como WhatsApp Business. Definir a env var sobrescreve o fallback. |
 | `.env.local` | `CONTACT_RECEIVER_EMAIL` + `RESEND_API_KEY` | Para o formulário de orçamento enviar e-mail de verdade (ver `app/contato/actions.ts`). Sem isso, o formulário valida e mostra um erro honesto orientando o WhatsApp como alternativa. |
 | `data/events.ts` | Eventos reais do portfólio | Array vazio de propósito — formato de exemplo comentado no próprio arquivo. |
 | `data/before-after.ts` | Fotos reais de antes/depois | Array vazio — a seção só aparece na home quando houver itens aqui. |

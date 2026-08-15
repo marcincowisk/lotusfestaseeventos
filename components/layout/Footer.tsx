@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
  */
 export function Footer() {
   const year = new Date().getFullYear();
-  const { phone, email, whatsappNumber } = siteConfig.contact;
+  const { phone, email, whatsappNumber, businessHours } = siteConfig.contact;
 
   return (
     <footer className="border-t border-border/20 bg-surface">
@@ -77,6 +77,7 @@ export function Footer() {
               </a>
             </li>
           </ul>
+          {businessHours ? <p className="mt-5 text-small text-muted">Atendimento: {businessHours}</p> : null}
         </div>
 
         <div>

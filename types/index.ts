@@ -3,6 +3,7 @@ export type ServiceCategorySlug =
   | "som"
   | "iluminacao"
   | "energia"
+  | "audiovisual"
   | "efeitos";
 
 export interface ServiceCategory {
@@ -14,6 +15,8 @@ export interface ServiceCategory {
   includes: string[];
   /** Caminho de imagem real (quando existir). Ausente = placeholder editorial é usado. */
   coverImage?: string;
+  /** Prova social real (ex: artistas/bandas já atendidos) — só preencher com nomes confirmados. */
+  pastClients?: string[];
 }
 
 export type EquipmentCategory =
@@ -22,7 +25,8 @@ export type EquipmentCategory =
   | "audio"
   | "estrutura"
   | "energia"
-  | "palco";
+  | "palco"
+  | "audiovisual";
 
 export interface Equipment {
   slug: string;
@@ -60,6 +64,7 @@ export type InterestService =
   | "Som"
   | "Iluminação"
   | "Energia"
+  | "Audiovisual (painel de LED / projeção)"
   | "Experiências / Efeitos especiais"
   | "Não sei ainda";
 

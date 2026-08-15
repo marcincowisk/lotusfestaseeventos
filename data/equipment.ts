@@ -1,7 +1,9 @@
 import type { Equipment } from "@/types";
 
 /**
- * Lista de equipamentos confirmada a partir do site atual da Lótus (16 itens).
+ * Lista de equipamentos confirmada a partir do site/material atual da Lótus:
+ * os 16 itens originais de iluminação/efeitos + 6 itens (gerador, áudio,
+ * estrutura, audiovisual) identificados numa segunda rodada de conteúdo real.
  * Descrições e "uso recomendado" são explicações técnicas genéricas de cada
  * equipamento (não são alegações específicas sobre a empresa) — devem ser
  * revisadas pelo time técnico da Lótus antes de publicar.
@@ -119,6 +121,49 @@ export const equipmentList: Equipment[] = [
     description: "Refletor direcionado manualmente para acompanhar uma pessoa ou ponto do palco.",
     recommendedUse: "Entrada dos noivos, discursos e momentos de destaque no palco.",
   },
+  {
+    slug: "gerador-himoinsa-trifasico",
+    name: "Gerador Trifásico HIMOINSA (65kVA–160kVA)",
+    category: "energia",
+    description:
+      "Gerador trifásico com correção de fase, disponível de 65kVA a 160kVA de potência. Modo Stand By (backup) ou Full Time (10h ou 12h de energia contínua).",
+    recommendedUse: "Eventos com motores, ar-condicionado ou carga elétrica alta que exigem energia ininterrupta.",
+  },
+  {
+    slug: "microfone-sem-fio",
+    name: "Microfone sem fio",
+    category: "audio",
+    description: "Sistema de microfonia wireless para celebrante, discursos e apresentações.",
+    recommendedUse: "Cerimônias de casamento, discursos e momentos de fala ao vivo.",
+  },
+  {
+    slug: "sistema-in-ear",
+    name: "Sistema In-Ear",
+    category: "audio",
+    description: "Monitor de retorno individual sem fio para músicos no palco.",
+    recommendedUse: "Bandas e shows ao vivo que precisam de monitoramento de palco sem uso de caixas de retorno.",
+  },
+  {
+    slug: "pista-de-danca-led",
+    name: "Pista de Dança iluminada (LED)",
+    category: "estrutura",
+    description: "Piso de vidro temperado de alta resistência com placas iluminadas em LED.",
+    recommendedUse: "Pista de dança como ponto focal visual da festa.",
+  },
+  {
+    slug: "painel-de-led",
+    name: "Painel de LED P3 4K",
+    category: "audiovisual",
+    description: "Painel de LED indoor/outdoor, resolução P3 4K, tamanho personalizado, com VJ para animação e projeção de vídeos.",
+    recommendedUse: "Telão de palco, identidade visual do evento e conteúdo ao vivo em shows e casamentos.",
+  },
+  {
+    slug: "projetor-epson-laser",
+    name: "Projetor Epson Laser",
+    category: "audiovisual",
+    description: "Projeção audiovisual em alta resolução e luminosidade, com telão de até 200 polegadas.",
+    recommendedUse: "Transformar qualquer ambiente em um cinema — vídeos, homenagens e conteúdo institucional.",
+  },
 ];
 
 export const equipmentCategoryLabels: Record<Equipment["category"], string> = {
@@ -127,5 +172,6 @@ export const equipmentCategoryLabels: Record<Equipment["category"], string> = {
   audio: "Áudio",
   estrutura: "Estrutura",
   energia: "Energia",
+  audiovisual: "Audiovisual",
   palco: "Palco",
 };

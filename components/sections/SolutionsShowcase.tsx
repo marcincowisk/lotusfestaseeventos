@@ -12,7 +12,7 @@ export function SolutionsShowcase() {
       <Container>
         <SectionHeader
           eyebrow="Soluções"
-          title="Cinco frentes técnicas, uma única responsabilidade."
+          title="Seis frentes técnicas, uma única responsabilidade."
           description="Cada categoria resolve uma camada diferente do evento — juntas, garantem que estrutura, som, luz e energia funcionem como um único sistema."
         />
 

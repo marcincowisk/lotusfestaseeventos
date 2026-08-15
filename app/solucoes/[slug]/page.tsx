@@ -82,6 +82,20 @@ export default function ServiceDetailPage({ params }: PageProps) {
               ))}
             </ul>
 
+            {service.pastClients && service.pastClients.length > 0 ? (
+              <>
+                <h2 className="mt-10 text-label uppercase tracking-[0.15em] text-primary">
+                  Alguns artistas que já atendemos
+                </h2>
+                <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-1 text-body text-text/80 sm:grid-cols-3">
+                  {service.pastClients.map((name) => (
+                    <li key={name}>{name}</li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-small text-muted">Entre muitos outros.</p>
+              </>
+            ) : null}
+
             <div className="mt-10">
               <ButtonLink href="/contato">Solicitar orçamento</ButtonLink>
             </div>

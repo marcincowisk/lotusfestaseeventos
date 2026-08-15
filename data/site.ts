@@ -28,15 +28,21 @@ export const siteConfig = {
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/lotusfestaseeventos",
   },
 
-  // TODO: inserir informação oficial — não publicado no site atual.
   // Nota: só variáveis NEXT_PUBLIC_ são lidas aqui de propósito — este módulo é
   // importado por componentes client (ex: WhatsAppButton), então nenhuma env
   // var privada (ex: CONTACT_RECEIVER_EMAIL, RESEND_API_KEY) deve entrar aqui.
   // Essas ficam isoladas em app/contato/actions.ts ("use server").
   contact: {
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
+    // "12 3883 4446" aparece com o ícone do WhatsApp na sinalização do site atual
+    // (foto do painel de LED, seção "Atendimento"). Formato internacional sem
+    // espaços/traços para o link wa.me. CONFIRME com o cliente se este número
+    // está mesmo habilitado como WhatsApp Business antes de divulgar amplamente.
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "551238834446",
     email: "",
+    // TODO: inserir e-mail oficial — não publicado no site atual.
     phone: "",
+    // Confirmado na sinalização do site atual ("Atendimento: segunda a sexta das 9h às 17h").
+    businessHours: "Segunda a sexta, das 9h às 17h",
   },
 } as const;
 
