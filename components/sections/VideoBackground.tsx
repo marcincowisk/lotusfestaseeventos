@@ -29,6 +29,7 @@ export function VideoBackground({ src, poster, className }: VideoBackgroundProps
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        if (!entry) return;
         if (entry.isIntersecting) {
           video.play().catch(() => {});
         } else {
