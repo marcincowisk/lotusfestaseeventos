@@ -4,9 +4,10 @@ export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
 /**
- * Favicon gerado como monograma tipográfico — evita depender de um arquivo de
- * logo real (não disponível/confirmado) até que a identidade visual definitiva
- * seja fornecida pelo cliente.
+ * Favicon gerado como monograma tipográfico — badge vermelho (cor real da
+ * marca) com "L" branco, legível em tamanhos pequenos de aba do navegador.
+ * Trocar por um recorte real do símbolo do logo (a flor de lótus) assim que
+ * o arquivo vetorial oficial for fornecido.
  */
 export default function Icon() {
   return new ImageResponse(
@@ -18,10 +19,10 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0B0C0A",
-          color: "#C9A24B",
+          background: "#E12622",
+          color: "#FFFFFF",
           fontSize: 20,
-          fontWeight: 600,
+          fontWeight: 700,
         }}
       >
         L

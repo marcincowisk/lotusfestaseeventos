@@ -19,11 +19,11 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "flex-end",
           padding: 80,
-          background: "linear-gradient(160deg, #1C1D15 0%, #0B0C0A 70%)",
-          color: "#F5F3EC",
+          background: "linear-gradient(160deg, #1A1313 0%, #0A0A0A 70%)",
+          color: "#F7F6F3",
         }}
       >
-        <div style={{ display: "flex", fontSize: 24, letterSpacing: 4, textTransform: "uppercase", color: "#C9A24B" }}>
+        <div style={{ display: "flex", fontSize: 24, letterSpacing: 4, textTransform: "uppercase", color: "#E12622" }}>
           Desde {siteConfig.legalFoundingYear} · {siteConfig.location.region}
         </div>
         <div style={{ fontSize: 64, marginTop: 24, fontWeight: 600, maxWidth: 900, display: "flex" }}>

@@ -65,16 +65,18 @@ Jornada principal: **Home → Soluções ou Eventos (prova) → Contato/WhatsApp
 
 ## 4. Direção visual e Design System
 
-**Paleta** — fundo escuro cinematográfico com acento dourado terroso (raiz na identidade Lótus, elevado para sofisticação):
+**Paleta** — extraída da identidade real da Lótus (logo enviado pelo cliente: preto, vermelho e branco). O vermelho de tela não é o hex exato do logo; foi calibrado para passar WCAG AA tanto como texto sobre o fundo preto quanto como fundo de botão com texto branco (contraste ≈ 4.5–4.7:1 nos dois sentidos):
 
 | Token | Valor | Uso |
 |---|---|---|
-| `--color-bg` | `#0B0C0A` | fundo base |
-| `--color-surface` | `#15160F` | seções alternadas |
-| `--color-primary` | `#C9A24B` | acentos, CTAs |
-| `--color-text` | `#F5F3EC` | texto principal |
-| `--color-muted` | `#9B9A8C` | texto secundário |
-| `--color-success` / `--color-error` | `#5E8C6A` / `#B4544A` | feedback de formulário |
+| `--color-bg` | `#0A0A0A` | fundo base (preto do logo) |
+| `--color-surface` | `#140F0F` | seções alternadas |
+| `--color-primary` | `#E12622` | acentos, CTAs, botões (vermelho da marca) |
+| `--color-accent` | `#B01D1A` | hover de botões/links (vermelho mais escuro) |
+| `--color-text` | `#F7F6F3` | texto principal (branco do logo) |
+| `--color-muted` | `#A6A29D` | texto secundário |
+| `--color-success` | `#5E8C6A` | feedback positivo de formulário |
+| `--color-error` | `#D2572E` | feedback de erro — deliberadamente um âmbar/terracota, não o vermelho de marca, para não confundir "erro" com o CTA principal |
 
 **Tipografia:** `Fraunces` (display serifado editorial) + `Inter` (sans, UI/corpo). Escala fluida via `clamp()` (ver `tailwind.config.ts`).
 **Espaçamento:** base 4/8px, seções com `py-24` a `py-40` em desktop.

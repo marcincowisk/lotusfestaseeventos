@@ -19,12 +19,12 @@ export function Hero() {
           className="h-full w-full object-cover"
         />
         {!HERO_VIDEO_SRC ? (
-          <div className="h-full w-full bg-[radial-gradient(ellipse_at_top,_rgb(28_29_21)_0%,_rgb(11_12_10)_65%)]">
+          <div className="h-full w-full bg-[radial-gradient(ellipse_at_top,_rgb(var(--color-surface-raised))_0%,_rgb(var(--color-bg))_65%)]">
             <div
-              className="h-full w-full opacity-[0.15]"
+              className="h-full w-full opacity-[0.12]"
               style={{
                 backgroundImage:
-                  "repeating-linear-gradient(115deg, rgb(201 162 75) 0px, transparent 1px, transparent 3px, rgb(201 162 75) 4px)",
+                  "repeating-linear-gradient(115deg, rgb(var(--color-primary)) 0px, transparent 1px, transparent 3px, rgb(var(--color-primary)) 4px)",
                 backgroundSize: "3px 100%",
               }}
             />
