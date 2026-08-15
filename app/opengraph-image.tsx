@@ -23,7 +23,7 @@ export default function OpengraphImage() {
           color: "#F5F3EC",
         }}
       >
-        <div style={{ fontSize: 24, letterSpacing: 4, textTransform: "uppercase", color: "#C9A24B" }}>
+        <div style={{ display: "flex", fontSize: 24, letterSpacing: 4, textTransform: "uppercase", color: "#C9A24B" }}>
           Desde {siteConfig.legalFoundingYear} · {siteConfig.location.region}
         </div>
         <div style={{ fontSize: 64, marginTop: 24, fontWeight: 600, maxWidth: 900, display: "flex" }}>
