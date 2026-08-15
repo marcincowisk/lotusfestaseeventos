@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design tokens — valores em "R G B" para funcionar com a opacidade do Tailwind (rgb(var(--x) / <alpha-value>)) */
+  --color-bg: 11 12 10;               /* #0B0C0A */
+  --color-surface: 21 22 15;          /* #15160F */
+  --color-surface-raised: 28 29 21;   /* #1C1D15 */
+  --color-primary: 201 162 75;        /* #C9A24B dourado terroso */
+  --color-primary-foreground: 11 12 10;
+  --color-text: 245 243 236;          /* #F5F3EC */
+  --color-muted: 155 154 140;         /* #9B9A8C */
+  --color-border: 245 243 236;        /* usado sempre com baixa opacidade */
+  --color-accent: 143 122 74;         /* dourado mais escuro, para hovers */
+  --color-success: 94 140 106;
+  --color-error: 180 84 74;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  border-color: rgb(var(--color-border) / 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+::selection {
+  background-color: rgb(var(--color-primary) / 0.3);
+  color: rgb(var(--color-text));
+}
+
+/* Foco visível consistente — nunca remover outline sem substituto */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scrollbar discreta (progressive enhancement, não crítica) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border) / 0.25);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .container-lotus {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Reveal em scroll — a classe .is-visible é adicionada via IntersectionObserver (hook useReveal) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+}
